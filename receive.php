@@ -6,7 +6,7 @@
  $sender_txt = $json_obj->events[0]->message->text;
  $replyToken = $json_obj->events[0]->source->replyToken;
  $response = array (
-				"replyToken" => $sender_userid,
+				"replyToken" => $replyToken,
 				"messages" => array (
 					array (
 						"type" => "text",
@@ -29,4 +29,7 @@
  curl_setopt($ch, CURLOPT_HTTPHEADER, $header);                                                                                                   
  $result = curl_exec($ch);
  curl_close($ch); 
+
+ fwrite($myfile, $result); 
+ fclose($myfile);
 ?>
