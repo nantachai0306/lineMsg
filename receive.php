@@ -64,6 +64,18 @@ $response = array ();
 					)
 				)
 			);
+ }else if($sender_txt == "sing"){
+ 	$call_line_api = "https://api.line.me/v2/bot/message/reply";
+ 	 $response = array (
+				"replyToken" => $sender_replyToken,
+				"messages" => array (
+					array (
+						"type" => "sticker",
+						"packageId" => "1",
+						"stickerId" => "11"
+					)
+				)
+			);
  }
 
 
