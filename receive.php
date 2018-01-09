@@ -76,6 +76,35 @@ $response = array ();
 					)
 				)
 			);
+ }else if($sender_txt == "btn"){
+ 	$call_line_api = "https://api.line.me/v2/bot/message/reply";
+ 	$response = array (
+				"replyToken" => $sender_replyToken,
+				"messages" => array (
+					array (
+						"type" => "template",
+						"altText" => "這是範本",
+						"template" => array (
+							"type" => "buttons",
+							"thumbnailImageUrl" => "https://www.w3schools.com/css/paris.jpg",
+							"title" => "Menu",
+							"text" => "Please select",
+							"actions" => array (
+								array (
+									"type" => "postback",
+									"label" => "是",
+									"data" => "action=yes&itemid=123"
+								),
+								array (
+									"type" => "postback",
+                   					"label" => "否",
+                    				"data" => "action=no&itemid=456"
+								)
+							)
+						)
+					)
+				)
+			);
  }
 
 
